@@ -1,0 +1,519 @@
+Program.Sub.ScreenSU.Start
+Gui.SS_Form1..create
+Gui.SS_Form1..caption("GCG Commission By Part")
+Gui.SS_Form1..size(13185,10410)
+Gui.SS_Form1..position(0,0)
+Gui.SS_Form1..event(UnLoad,ss_form1_unload)
+Gui.SS_Form1..forecolor(0)
+Gui.SS_Form1..BackColor(-2147483633)
+Gui.SS_Form1..maxbutton(False)
+Gui.SS_Form1..minbutton(False)
+Gui.SS_Form1..mousepointer(0)
+Gui.SS_Form1..sizeable(False)
+Gui.SS_Form1..MinX(0)
+Gui.SS_Form1..MinY(0)
+Gui.SS_Form1.lbl2.create(label,"Part",True,1800,195,1,105,135,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.txtPart.create(textbox,"",True,1335,300,0,105,330,False,0,Arial,8,16777215,1)
+Gui.SS_Form1.lbl1.create(label,"",True,1800,200,1,1985,135,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.lbl3.create(label,"Salesperson",True,1800,195,1,105,795,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.txtSP.create(textbox,"",True,915,300,0,105,1005,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txtSP.tabstop(True)
+Gui.SS_Form1.txtSP.tabindex(1)
+Gui.SS_Form1.txtSP.DefaultValue("")
+Gui.SS_Form1.txtSP.Event(LostFocus,txtSP_LostFocus)
+Gui.SS_Form1.lbl4.create(label,"Name",True,735,195,1,1470,795,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.txtSPName.create(textbox,"",True,1845,300,0,1470,1005,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txtSPName.DefaultValue("")
+Gui.SS_Form1.lbl5.create(label,"Comm.Percent",True,1245,195,1,3345,795,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.txtPrct.create(textbox,"",True,1125,300,0,3375,1005,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txtPrct.ControlGroup(1)
+Gui.SS_Form1.txtPrct.DefaultValue("0")
+Gui.SS_Form1.chkPrimaryTer.create(checkbox)
+Gui.SS_Form1.chkPrimaryTer.size(390,300)
+Gui.SS_Form1.chkPrimaryTer.position(4575,975)
+Gui.SS_Form1.chkPrimaryTer.ControlGroup(1)
+Gui.SS_Form1.cmdBrowserSP.create(button)
+Gui.SS_Form1.cmdBrowserSP.caption("^")
+Gui.SS_Form1.cmdBrowserSP.size(345,330)
+Gui.SS_Form1.cmdBrowserSP.position(1080,1005)
+Gui.SS_Form1.cmdBrowserSP.event(Click,cmdBrowserSP_click)
+Gui.SS_Form1.cmdBrowserSP.tabstop(True)
+Gui.SS_Form1.cmdBrowserSP.tabindex(2)
+Gui.SS_Form1.cmdSave.Create(Button)
+Gui.SS_Form1.cmdSave.Size(645,375)
+Gui.SS_Form1.cmdSave.Position(105,1680)
+Gui.SS_Form1.cmdSave.Caption("Save")
+Gui.SS_Form1.cmdSave.Event(Click,cmdSave_Click)
+Gui.SS_Form1.cmdCleat.create(button)
+Gui.SS_Form1.cmdCleat.caption("Clear")
+Gui.SS_Form1.cmdCleat.size(615,375)
+Gui.SS_Form1.cmdCleat.position(810,1680)
+Gui.SS_Form1.cmdCleat.event(Click,cmdClear_Click)
+Gui.SS_Form1.gs.Create(GsGridControl)
+Gui.SS_Form1.gs.Size(12690,7500)
+Gui.SS_Form1.gs.Position(120,2220)
+Gui.SS_Form1.gs.Event(RowCellClick,gs_RowCellClick)
+Gui.SS_Form1.dtpEffectiveDate.Create(DatePicker)
+Gui.SS_Form1.dtpEffectiveDate.Size(1260,285)
+Gui.SS_Form1.dtpEffectiveDate.Position(5940,1005)
+Gui.SS_Form1.dtpEffectiveDate.ControlGroup(1)
+Gui.SS_Form1.dtpEffectiveDate.Enabled(False)
+Gui.SS_Form1.lbl6.Create(Label,"Effective Date",True,1320,195,1,5925,795,True,0,"Arial",8,-2147483633,0)
+Gui.SS_Form1.txtCity.Create(TextBox,"",True,1125,300,0,7260,1005,True,0,"Arial",8,-2147483643,1)
+Gui.SS_Form1.txtCity.DefaultValue("")
+Gui.SS_Form1.txtCity.ControlGroup(1)
+Gui.SS_Form1.lbl7.Create(Label,"Ship City",True,795,195,1,7260,810,True,0,"Arial",8,-2147483633,0)
+Gui.SS_Form1.txtState.Create(TextBox,"",True,1245,300,0,8460,1005,True,0,"Arial",8,-2147483643,1)
+Gui.SS_Form1.txtState.DefaultValue("")
+Gui.SS_Form1.txtState.ControlGroup(1)
+Gui.SS_Form1.txtState.MaxLength(3)
+Gui.SS_Form1.lbl8.Create(Label,"Ship State",True,825,195,1,8430,795,True,0,"Arial",8,-2147483633,0)
+Gui.SS_Form1.txtTerm.Create(TextBox,"",True,645,300,0,9765,1005,True,0,"Arial",8,-2147483643,1)
+Gui.SS_Form1.txtTerm.DefaultValue("0")
+Gui.SS_Form1.txtTerm.ControlGroup(1)
+Gui.SS_Form1.lbl9.Create(Label,"Term",True,480,195,1,9735,795,True,0,"Arial",8,-2147483633,0)
+Gui.SS_Form1.chkEffDate.Create(CheckBox)
+Gui.SS_Form1.chkEffDate.Size(1410,360)
+Gui.SS_Form1.chkEffDate.Position(5940,1350)
+Gui.SS_Form1.chkEffDate.Caption("EffectiveDate")
+Gui.SS_Form1.chkEffDate.Event(Click,chkEffDate_Click)
+Gui.SS_Form1.lbl10.Create(Label,"Pri. Territory",True,1110,240,1,4560,780,True,0,"Arial",8,-2147483633,0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.iOrdinal.Declare(Long,0)
+Variable.Global.sKey.Declare(String)
+v.Global.sColorRow.Declare(long)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: JCT
+'Project Start Date: 07/29/2011
+'1-16-12 - jct - added checkbox to screen to designate "Primary Territory"
+
+'Hooks:
+'  10120 - populate
+'  10220 - script2 button
+'Other Components:
+'  GCG_Commision_By_Part_Report
+'Notes:
+'for Piad
+
+'BN Aug 9, 2017
+'Modified, changed to datatable, added fields
+
+F.ODBC.Connection!Con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+V.Local.sPart.Declare(String)
+
+'Inventory > File > Inventory Parts > Open
+
+'Poplate hook - rename script2 button
+F.Intrinsic.Control.If(V.Caller.hook,=,10120)
+	V.Passed.000069.Set("Commissions")
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+'script2 hook
+F.Intrinsic.Control.elseIf(V.Caller.Hook,=,10220)
+	'passed.000007 : Part number 17 characters
+	F.Intrinsic.Control.if(V.Passed.000007.Trim,=,"")
+		f.Intrinsic.UI.Msgbox("Please select part","Empty part")
+		F.Intrinsic.Control.CallSub(Ss_form1_unload)
+	F.Intrinsic.Control.Else
+		f.Intrinsic.String.GSSPartString(V.Passed.000007,V.Passed.000008,v.Local.sPart)
+		Gui.SS_Form1.txtPart.Text(V.Local.sPart)		
+		F.Data.Dictionary.CreateFromSQL("SalesPeople","con","Select  SalesPerson_Code,SalesPerson_Code from V_SalesPeople")
+		gui.SS_Form1.txtSP.AddAutoCompleteItem("SalesPeople","Dictionary")	
+		F.Data.Dictionary.SetDefaultReturn("SalesPeople", "")
+		f.Data.Dictionary.Close("SalesPeople")
+		F.Intrinsic.Control.CallSub(Populate_grid)
+		Gui.SS_Form1..Show
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.ss_form1_unload.Start
+F.Intrinsic.Control.SetErrorHandler("ss_form1_unload_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!Con.Close
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ss_form1_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4092_Commission_By_Part.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.ss_form1_unload.End
+
+Program.Sub.Populate_Grid.Start
+F.Intrinsic.Control.SetErrorHandler("Populate_Grid_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local..BulkDeclareString(sError, sSQL)
+
+f.Intrinsic.Control.If(v.DataTable.DT.Exists,=,True)
+	f.Data.DataTable.Close("DT")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Select * from GCG_Part_Commission where ltrim(rtrim(PART)) = '{0}' order by SALESPERSON_CODE",v.Screen.SS_Form1!txtPart.Text.Trim,V.Local.sSQL)
+f.Data.DataTable.CreateFromSQL("DT","con",v.Local.sSQL,True)
+F.Data.DataTable.AddColumn("DT","Delete",string,"Delete")
+gui.SS_Form1.gs.AddGridviewFromDatatable("GV","DT")
+f.Intrinsic.Control.CallSub(format_gs)
+gui.SS_Form1.gs.MainView("GV")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Populate_Grid_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4092_Commission_By_Part.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Populate_Grid.End
+
+Program.Sub.format_GS.Start
+F.Intrinsic.Control.SetErrorHandler("format_GS_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+
+gui.SS_Form1.gs.setColumnProperty("GV","Part","Visible",False)
+
+gui.SS_Form1.gs.setColumnProperty("GV","SalesPerson_Code","AllowEdit",False)
+gui.SS_Form1.gs.setColumnProperty("GV","SalesPerson_Code","ReadOnly",True)
+gui.SS_Form1.gs.setColumnProperty("GV","SalesPerson_Code","Caption","SP Code")
+
+gui.SS_Form1.gs.setColumnProperty("GV","SalesPerson","AllowEdit",False)
+gui.SS_Form1.gs.setColumnProperty("GV","SalesPerson","ReadOnly",True)
+gui.SS_Form1.gs.setColumnProperty("GV","SalesPerson","Caption","Name")
+
+gui.SS_Form1.gs.setColumnProperty("GV","PCT","AllowEdit",False)
+gui.SS_Form1.gs.setColumnProperty("GV","PCT","ReadOnly",True)
+gui.SS_Form1.gs.setColumnProperty("GV","PCT","Caption","Percent")
+'gui.SS_Form1.gs.setColumnProperty("GV","PCT","Width","80")
+gui.SS_Form1.gs.setColumnProperty("GV","PCT","CellHAlignment" ,"near")
+
+gui.SS_Form1.gs.setColumnProperty("GV","Primary_Territory","AllowEdit",False)
+gui.SS_Form1.gs.setColumnProperty("GV","Primary_Territory","ReadOnly",True)
+gui.SS_Form1.gs.setColumnProperty("GV","Primary_Territory","Caption","Pri. Territory")
+'gui.SS_Form1.gs.setColumnProperty("GV","Primary_Territory","Width","80")
+
+gui.SS_Form1.gs.setColumnProperty("GV","Effective_Date","AllowEdit",False)
+gui.SS_Form1.gs.setColumnProperty("GV","Effective_Date","ReadOnly",True)
+gui.SS_Form1.gs.setColumnProperty("GV","Effective_Date","Caption","Effective Date")
+gui.SS_Form1.gs.setColumnProperty("GV","Effective_Date","DisplayCustomDatetime","d")
+'gui.SS_Form1.gs.setColumnProperty("GV","Effective_Date","Width","105")
+	
+gui.SS_Form1.gs.setColumnProperty("GV","City_Ship","AllowEdit",False)
+gui.SS_Form1.gs.setColumnProperty("GV","City_Ship","ReadOnly",True)
+gui.SS_Form1.gs.setColumnProperty("GV","City_Ship","Caption","Ship City")
+'gui.SS_Form1.gs.setColumnProperty("GV","City_Ship","maxWidth","60")
+
+gui.SS_Form1.gs.setColumnProperty("GV","State_Ship","AllowEdit",False)
+gui.SS_Form1.gs.setColumnProperty("GV","State_Ship","ReadOnly",True)
+gui.SS_Form1.gs.setColumnProperty("GV","State_Ship","Caption","Ship State")
+'gui.SS_Form1.gs.setColumnProperty("GV","State_Ship","Width","60")
+
+gui.SS_Form1.gs.setColumnProperty("GV","Term","AllowEdit",False)
+gui.SS_Form1.gs.setColumnProperty("GV","Term","ReadOnly",True)
+gui.SS_Form1.gs.setColumnProperty("GV","Term","Caption","Term")
+'gui.SS_Form1.gs.setColumnProperty("GV","Term","minWidth","60")
+gui.SS_Form1.gs.setColumnProperty("GV","Term","CellHAlignment" ,"near")
+
+gui.SS_Form1.gs.setColumnProperty("GV","Delete","AllowEdit",False)
+gui.SS_Form1.gs.setColumnProperty("GV","Delete","ReadOnly",True)
+
+f.Intrinsic.Control.CallSub(gswidth)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("format_GS_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4092_Commission_By_Part.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.format_GS.End
+
+Program.Sub.gsWidth.Start
+gui.SS_Form1.gs.setColumnProperty("GV","SalesPerson_Code","minWidth","68")
+gui.SS_Form1.gs.setColumnProperty("GV","SalesPerson_Code","maxWidth","68")
+gui.SS_Form1.gs.setColumnProperty("GV","SalesPerson","minWidth","125")
+gui.SS_Form1.gs.setColumnProperty("GV","SalesPerson","maxWidth","125")
+Program.Sub.gsWidth.End
+
+Program.Sub.txtSP_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtSP_LostFocus_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sSQL, sSalesPersonName, sRet)
+v.Local..BulkDeclareLong(iRet)
+
+Gui.SS_Form1.gs.SetRowAppearance("GV",v.Global.sColorRow,"ForeColor","Black")
+
+f.Intrinsic.String.Build("select count(*) from V_SALESPEOPLE where ltrim(rtrim(SALESPERSON_CODE)) = '{0}'",v.Screen.SS_Form1!txtSP.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL,v.Local.iRet)
+f.Intrinsic.Control.If(v.Local.iRet,=,0)
+	f.Intrinsic.Control.CallSub(clearfields)
+	gui.SS_Form1.txtSPName.Text("")	
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Build("Select SalesPerson from V_SalesPeople where ltrim(rtrim(SALESPERSON_CODE)) = '{0}'",v.Screen.SS_Form1!txtSP.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL,v.Local.sSalesPersonName)
+gui.SS_Form1.txtSPName.Text(v.Local.sSalesPersonName)
+f.Intrinsic.Control.CallSub(retrieve)
+f.Intrinsic.Control.CallSub(gswidth)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtSP_LostFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4689_Commission_By_Part.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.txtSP_LostFocus.End
+
+Program.Sub.Retrieve.Start
+F.Intrinsic.Control.SetErrorHandler("Retrieve_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sFilter, sRet)
+
+f.Intrinsic.String.Build("Part = '{0}' and SalesPerson_Code = '{1}'",v.Screen.SS_Form1!txtPart.Text.Trim,v.Screen.SS_Form1!txtSP.Text.Trim,v.Local.sFilter)
+F.Data.DataTable.Select("DT", v.Local.sFilter, v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"***NORETURN***")
+	gui.SS_Form1.txtPrct.Text(v.DataTable.DT(v.Local.sRet.Trim).PCT!FieldValTrim)
+	F.Intrinsic.Control.If(v.DataTable.DT(v.Local.sRet.Trim).Primary_Territory!FieldValTrim,=,"Y")
+		gui.SS_Form1.chkPrimaryTer.Value(1)
+	F.Intrinsic.Control.Else
+		gui.SS_Form1.chkPrimaryTer.Value(0)
+	F.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.DT(v.Local.sRet.Trim).Effective_Date!FieldValtrim,<>,"")
+		gui.SS_Form1.chkEffDate.Value(1)
+		gui.SS_Form1.dtpEffectiveDate.Enabled(True)	
+		gui.SS_Form1.dtpEffectiveDate.Value(v.DataTable.DT(v.Local.sRet.Trim).Effective_Date!FieldValtrim)
+	f.Intrinsic.Control.Else
+		gui.SS_Form1.chkEffDate.Value(0)
+		gui.SS_Form1.dtpEffectiveDate.Enabled(v.Ambient.Date)
+	f.Intrinsic.Control.EndIf			
+	gui.SS_Form1.txtCity.Text(v.DataTable.DT(v.Local.sRet.Trim).City_Ship!FieldValTrim)
+	gui.SS_Form1.txtState.Text(v.DataTable.DT(v.Local.sRet.Trim).State_Ship!FieldValTrim)
+	gui.SS_Form1.txtTerm.Text(v.DataTable.DT(v.Local.sRet.Trim).Term!FieldValTrim)		
+	
+	Gui.SS_Form1.gs.SetRowAppearance("GV",V.Local.sRet.Trim,"ForeColor","Blue")		
+	v.Global.sColorRow.Set(V.Local.sRet.Trim)
+f.Intrinsic.Control.Else
+	f.Intrinsic.Control.CallSub(clearfields)
+f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.CallSub(gswidth)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Retrieve_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4689_Commission_By_Part.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Retrieve.End
+
+Program.Sub.cmdBrowserSP_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdBrowserSP_click_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sRet, spart, sSQL)
+
+Gui.SS_Form1.gs.SetRowAppearance("GV",v.Global.sColorRow,"ForeColor","Black")
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(90,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.SS_Form1.txtSP.Text(V.Local.sRet(0))
+	Gui.SS_Form1.txtSPName.Text(V.Local.sRet(1).Trim)	
+	f.Intrinsic.Control.CallSub(retrieve)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdBrowserSP_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4092_Commission_By_Part.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdBrowserSP_click.End
+
+Program.Sub.gs_RowCellClick.Start
+F.Intrinsic.Control.SetErrorHandler("gs_RowCellClick_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sSQL)
+v.Local.iFlag.Declare(long)
+Gui.SS_Form1.gs.SetRowAppearance("GV",v.Global.sColorRow,"ForeColor","Black")
+F.Intrinsic.Control.If(V.Args.Column,=,"Delete")
+	F.Intrinsic.UI.Msgbox("Would you like to delete this record?", "Delete record", 4, V.Local.iFlag)
+	f.Intrinsic.Control.If(v.Local.iFlag,=,7)				
+		f.Intrinsic.Control.ExitSub			
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("Delete from GCG_Part_Commission where ltrim(rtrim(Part)) = '{0}' and ltrim(rtrim(SalesPerson_Code)) = '{1}'",v.DataTable.DT(v.Args.RowIndex).Part!FieldValTrim,v.DataTable.DT(v.Args.RowIndex).SalesPerson_Code!FieldValTrim ,v.Local.sSQL)
+		f.ODBC.Connection!Con.Execute(v.Local.sSQL)
+		Function.Data.DataTable.DeleteRow("DT", v.Args.RowIndex)
+	f.Intrinsic.Control.Endif				
+Function.Intrinsic.Control.Else
+	gui.SS_Form1.txtSP.Text(v.DataTable.DT(v.Args.RowIndex).SalesPerson_Code!FieldValTrim)
+	gui.SS_Form1.txtSPName.Text(v.DataTable.DT(v.Args.RowIndex).SalesPerson!FieldValTrim)
+	f.Intrinsic.Control.CallSub(retrieve)
+	Gui.SS_Form1.gs.SetRowAppearance("GV",v.Args.RowIndex,"ForeColor","Blue")
+	v.Global.sColorRow.Set(v.Args.RowIndex)
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gs_RowCellClick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4092_Commission_By_Part.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.gs_RowCellClick.End
+
+Program.Sub.ClearFields.Start
+gui.SS_Form1..ClearGroup(1)
+gui.SS_Form1.chkPrimaryTer.Value(0)
+gui.SS_Form1.chkEffDate.Value(0)
+gui.SS_Form1.dtpEffectiveDate.Enabled(False)
+Program.Sub.ClearFields.End
+
+Program.Sub.cmdSave_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdSave_Click_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local..BulkDeclareString(sError, sSQL, sPercent, sPrimaryTer, sSalesPersonName, sFilter, sRet, sEffectiveDate)
+v.Local..BulkDeclareLong(iRet, iTerm)
+v.Local..BulkDeclareBoolean(bNumeric)
+v.Local.dEffectiveDate.Declare(date)
+
+'Check SalesPerson_Code
+f.Intrinsic.String.Build("select count(*) from V_SALESPEOPLE where ltrim(rtrim(SALESPERSON_CODE)) = '{0}'",v.Screen.SS_Form1!txtSP.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL,v.Local.iRet)
+f.Intrinsic.Control.If(v.Local.iRet,=,0)
+	f.Intrinsic.UI.Msgbox("Check Sales Person Code.","Invalid data")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Build("Select SalesPerson from V_SalesPeople where ltrim(rtrim(SALESPERSON_CODE)) = '{0}'",v.Screen.SS_Form1!txtSP.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL,v.Local.sSalesPersonName)
+
+'Check Percent
+f.Intrinsic.Control.If(v.Screen.SS_Form1!txtPrct.Text.Trim,=,"")
+	gui.SS_Form1.txtPrct.Text("0")
+f.Intrinsic.Control.EndIf
+f.Intrinsic.Math.IsNumeric(v.Screen.SS_Form1!txtPrct.Text.Trim,v.Local.bNumeric)
+f.Intrinsic.Control.If(v.Local.bNumeric,=,False)
+	gui.SS_Form1.txtPrct.Text("0")
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Format(v.Screen.SS_Form1!txtPrct.Text.Trim,"0.0000",v.Local.sPercent)
+
+'Translate Primary Territory
+f.Intrinsic.Control.If(v.Screen.SS_Form1!chkPrimaryTer.Value,=,1)
+	v.Local.sPrimaryTer.Set("Y")
+f.Intrinsic.Control.Else
+	v.Local.sPrimaryTer.Set("N")
+f.Intrinsic.Control.EndIf
+
+'Effective Date
+v.Local.dEffectiveDate.Set(v.Screen.SS_Form1!dtpEffectiveDate.Value)
+f.Intrinsic.String.Format(v.Local.dEffectiveDate,"YYYY-MM-DD",v.Local.sEffectiveDate)
+f.Intrinsic.String.Build("'{0}'",v.Local.sEffectiveDate,v.Local.sEffectiveDate)
+f.Intrinsic.Control.If(v.Screen.SS_Form1!chkEffDate.Value,=,0)
+	v.Local.sEffectiveDate.Set("Null")	
+f.Intrinsic.Control.EndIf
+
+'Term
+f.Intrinsic.Control.If(v.Screen.SS_Form1!txtTerm.Text.Trim,=,"")
+	gui.SS_Form1.txtTerm.Text("0")
+f.Intrinsic.Control.EndIf
+v.Local.bNumeric.Set(False)
+f.Intrinsic.Math.IsNumeric(v.Screen.SS_Form1!txtTerm.Text.Trim,v.Local.bNumeric)
+f.Intrinsic.Control.If(v.Local.bNumeric,=,False)
+	gui.SS_Form1.txtTerm.Text("0")
+f.Intrinsic.Control.EndIf
+v.Local.iTerm.Set(v.Screen.SS_Form1!txtTerm.Text.Trim)
+
+'Build Filter
+f.Intrinsic.String.Build("Part = '{0}' and SalesPerson_Code = '{1}'",v.Screen.SS_Form1!txtPart.Text.Trim,v.Screen.SS_Form1!txtSP.Text.Trim,v.Local.sFilter)
+
+'Reset previous colored row to black
+Gui.SS_Form1.gs.SetRowAppearance("GV",v.Global.sColorRow,"ForeColor","Black")
+
+F.Data.DataTable.Select("DT", v.Local.sFilter, v.Local.sRet)
+f.Intrinsic.Control.If(v.Local.sRet,<>,"***NORETURN***")
+	f.Intrinsic.Control.If(v.Screen.SS_Form1!chkEffDate.Value,=,1)
+		f.Data.DataTable.SetValue("DT",v.Local.sRet.Trim,"PCT",v.Local.sPercent,"Primary_Territory",v.Local.sPrimaryTer,"Effective_Date",v.Local.dEffectiveDate,"City_Ship",v.Screen.SS_Form1!txtCity.Text.Trim,"State_Ship",v.Screen.SS_Form1!txtState.Text.Trim,"Term",v.Local.iTerm)
+	f.Intrinsic.Control.Else
+		f.Data.DataTable.SetValue("DT",v.Local.sRet.Trim,"PCT",v.Local.sPercent,"Primary_Territory",v.Local.sPrimaryTer,"Effective_Date",v.Ambient.DBNull,"City_Ship",v.Screen.SS_Form1!txtCity.Text.Trim,"State_Ship",v.Screen.SS_Form1!txtState.Text.Trim,"Term",v.Local.iTerm)
+	f.Intrinsic.Control.EndIf	
+	f.Intrinsic.String.Build("Update GCG_Part_Commission set PCT = {0}, Primary_Territory = '{1}', Effective_Date = {2}, City_Ship = '{3}', State_Ship = '{4}', Term = {5} where Part = '{6}' and SalesPerson_Code = '{7}'",v.Local.sPercent,v.Local.sPrimaryTer,v.Local.sEffectiveDate,v.Screen.SS_Form1!txtCity.Text.Trim,v.Screen.SS_Form1!txtState.Text.Trim,v.Local.iTerm,v.Screen.SS_Form1!txtPart.Text.Trim,v.Screen.SS_Form1!txtSP.Text.Trim,v.Local.sSQL)
+	f.ODBC.Connection!Con.Execute(v.Local.sSQL)	
+	Gui.SS_Form1.gs.SetRowAppearance("GV",V.Local.sRet.Trim,"ForeColor","Blue")
+	v.Global.sColorRow.Set(V.Local.sRet.Trim)
+f.Intrinsic.Control.Else
+	f.Intrinsic.Control.If(v.Screen.SS_Form1!chkEffDate.Value,=,1)
+		f.Data.DataTable.AddRow("DT","Part",v.Screen.SS_Form1!txtPart.Text.Trim,"SalesPerson_Code",v.Screen.SS_Form1!txtSP.Text.Trim,"SalesPerson",v.Local.sSalesPersonName,"PCT",v.Local.sPercent,"Primary_Territory",v.Local.sPrimaryTer, "Effective_Date",v.Local.dEffectiveDate,"City_Ship",v.Screen.SS_Form1!txtCity.Text.Trim,"State_Ship",v.Screen.SS_Form1!txtState.Text.Trim,"Term",v.Local.iTerm,"Delete","Delete")
+	f.Intrinsic.Control.else
+		f.Data.DataTable.AddRow("DT","Part",v.Screen.SS_Form1!txtPart.Text.Trim,"SalesPerson_Code",v.Screen.SS_Form1!txtSP.Text.Trim,"SalesPerson",v.Local.sSalesPersonName,"PCT",v.Local.sPercent,"Primary_Territory",v.Local.sPrimaryTer, "City_Ship",v.Screen.SS_Form1!txtCity.Text.Trim,"State_Ship",v.Screen.SS_Form1!txtState.Text.Trim,"Term",v.Local.iTerm,"Delete","Delete")
+	f.Intrinsic.Control.EndIf	
+	f.Intrinsic.String.Build("Insert into GCG_Part_Commission values ('{0}','{1}','{2}',{3},'{4}',{5},'{6}','{7}',{8})",v.Screen.SS_Form1!txtPart.Text.Trim,v.Screen.SS_Form1!txtSP.Text.Trim,v.Local.sSalesPersonName,v.Local.sPercent,v.Local.sPrimaryTer,v.Local.sEffectiveDate, v.Screen.SS_Form1!txtCity.Text.Trim,v.Screen.SS_Form1!txtState.Text.Trim,v.Local.iTerm ,v.Local.sSQL)
+	f.ODBC.Connection!Con.Execute(v.Local.sSQL)
+	Gui.SS_Form1.gs.SetRowAppearance("GV",V.DataTable.DT.RowCount--,"ForeColor","Blue")
+	v.Global.sColorRow.Set(V.DataTable.DT.RowCount--)
+f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.CallSub(clearfields)
+gui.SS_Form1.txtSP.Text("")
+gui.SS_Form1.txtSPName.Text("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdSave_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4092_Commission_By_Part.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.chkEffDate_Click.Start
+f.Intrinsic.Control.If(v.Screen.SS_Form1!chkEffDate.Value,=,1)
+	gui.SS_Form1.dtpEffectiveDate.Enabled(True)
+f.Intrinsic.Control.Else
+	gui.SS_Form1.dtpEffectiveDate.Enabled(False)
+f.Intrinsic.Control.EndIf
+Program.Sub.chkEffDate_Click.End
+
+Program.Sub.cmdClear_Click.Start
+F.Intrinsic.Control.CallSub(clearfields)
+GUI.SS_Form1.txtSP.Text("")
+gui.SS_Form1.txtSPName.Text("")
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.ScreenSS.Start
+SS_Form1{{CAPTION::GCG Commission By Part
+SS_Form1.CTRL{{NAME::txtProgram.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+Program.Sub.Comments.EndPart\\TYPE::2\\CAPTION::Part\\GROUP::1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::lbl1\\TYPE::1\\GROUP::1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::chk1\\TYPE::9\\CAPTION::Primary Territory\\GROUP::1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtSP\\TYPE::2\\CAPTION::Salesperson\\TABSTOP::1\\GROUP::2\\BROWSER::1\\SIZE::1
+SS_Form1.CTRL{{NAME::txtSPName\\TYPE::2\\CAPTION::Name\\GROUP::2\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtPrct\\TYPE::2\\CAPTION::Comission Percent\\GROUP::2\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdAdd\\TYPE::5\\CAPTION::Add\\GROUP::3\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdCleat\\TYPE::5\\CAPTION::Clear\\GROUP::3\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdDelete\\TYPE::5\\CAPTION::Delete\\GROUP::3\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::lvwDesignations\\TYPE::7\\GROUP::4\\BROWSER::0\\SIZE::1
+
+Program.Sub.ScreenSS.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+Program.Sub.Comments.End
